@@ -1,4 +1,4 @@
-# <Coloque o nome do seu projeto aqui>
+# [Coloque o nome do seu projeto aqui]
 
 
 Implements Javascript best practices validated by eslint based on the Airbnb JavaScript Style Guide
