@@ -9,6 +9,7 @@ const usersController = new UsersController(User);
 
 router.get('/', async (req, res) => {
   try {
+    console.log('dsds');
     const users = await usersController.get();
     res.send(users);
   } catch (err) {
