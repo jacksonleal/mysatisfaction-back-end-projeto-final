@@ -19,4 +19,4 @@ const configureExpress = () => {
   return app;
 };
 
-module.exports = () => database.connect().then(configureExpress);
+module.exports = () => database().then(configureExpress);
