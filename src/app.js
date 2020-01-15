@@ -15,7 +15,7 @@ const configureExpress = () => {
   app.use(helmet.noSniff());
   app.disable('x-powered-by');
   app.use(bodyParser.json());
-  app.use(Config.API_BASE, routes);
+  app.use('/', routes);
   return app;
 };
 

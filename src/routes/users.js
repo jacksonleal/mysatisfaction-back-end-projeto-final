@@ -30,6 +30,7 @@ router.get('/:id', async (req, res) => {
 
 router.post('/', async (req, res) => {
   try {
+    console.log(req.body);
     await usersController.create(req.body);
     res.status(201).send(message.success.createUser);
   } catch (err) {
@@ -48,6 +49,7 @@ router.put('/:id', async (req, res) => {
 
 router.delete('/:id', async (req, res) => {
   try {
+    console.log(req.params.id)
     await usersController.remove(req.params.id);
     res.send(message.success.removeUser);
   } catch (err) {

@@ -1,11 +1,12 @@
 class UsersController {
-  constructor() {
+  constructor(user) {
+    this.User = user;
   }
 
   async get() {
     try {
       //consulta usuário no banco de dados
-      return 'usuario';
+      return await this.User.find({});
     } catch (err) {
       throw new Error(err);
     }
@@ -13,7 +14,7 @@ class UsersController {
 
   async getById(id) {
     try {
-       //consulta usuário no banco de dados
+      return await this.User.find({_id: id});
       return 'usuario';
     } catch (err) {
       throw new Error(err);
@@ -22,7 +23,8 @@ class UsersController {
 
   async create(userDTO) {
     try {
-      // salva userDTO no banco de dados
+      const user = await new this.User(userDTO);
+      user.save();
     } catch (err) {
       throw new Error(err);
     }
@@ -38,7 +40,7 @@ class UsersController {
 
   async remove(id) {
     try {
-      // remove usuario do id
+      return this.User.deleteOne({ _id: id });
     } catch (err) {
       throw new Error(err);
     }
