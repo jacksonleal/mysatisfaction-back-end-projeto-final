@@ -5,10 +5,10 @@ const app = express();
 app.use(bodyParser.json());
 
 app.get('/', (req, res) => res.send('Hello World!'));
-app.get('/products', (req, res) => res.send([{
-  name: 'Default product',
-  description: 'product description',
-  price: 100
+app.get('/usuarios', (req, res) => res.send([{
+  nome: 'Default usuario',
+  email: 'leal@leal.com',
+  senha: '1234'
 }]));
 
 export default app;
