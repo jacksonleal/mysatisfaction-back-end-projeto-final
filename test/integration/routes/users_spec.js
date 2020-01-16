@@ -5,11 +5,11 @@ describe('Routes: Usuarios', () => {
     senha: '1234'
   };
 
-  describe('GET /usuarios', () => {
+  describe('GET /users', () => {
     it('retorna uma lista de usuários', done => {
 
       request
-        .get('/usuarios')
+        .get('/users')
         .end((err, res) => {
           expect(res.body[0]).to.eql(defaultUsuario);
           done(err);
