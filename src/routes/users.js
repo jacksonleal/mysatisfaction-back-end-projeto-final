@@ -1,11 +1,8 @@
 import express from 'express';
+import UsersController from '../controllers/users';
 
 const router = express.Router();
-
-router.get('/', (req, res) => res.send([{
-  nome: 'Default usuario',
-  email: 'leal@leal.com',
-  senha: '1234'
-}]));
+const usersController = new UsersController();
+router.get('/', (req, res) => usersController.get(req, res));
 
 export default router;
