@@ -11,6 +11,20 @@ class UserController {
       res.status(400).send(err.message);
     }
   }
+
+  async getById(req, res) {
+    const {
+      params: { id }
+    } = req;
+
+    try {
+      const user = await this.User.find({ _id: id });
+      res.send(user);
+    } catch (err) {
+      res.status(400).send(err.message);
+    }
+  }
+
 }
 
 export default UserController;
