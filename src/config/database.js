@@ -1,6 +1,6 @@
-import mongoose from "mongoose";
+import mongoose from 'mongoose';
 
-const mongodbUrl = process.env.MONGODB_URL || "mongodb://localhost:27017/mytest";
+const mongodbUrl = process.env.MONGODB_URL || 'mongodb://localhost/test';
 
 const connect = () =>
   mongoose.connect(mongodbUrl, {

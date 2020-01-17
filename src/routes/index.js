@@ -1,9 +1,9 @@
 import express from 'express';
-import productsRoute from './users';
+import usersRoute from './users';
 
 const router = express.Router();
 
-router.use('/users', productsRoute);
+router.use('/users', usersRoute);
 router.get('/', (req, res) => res.send('Hello World!'));
 
 export default router;

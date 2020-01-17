@@ -1,12 +1,16 @@
-class ProductsController {
+class UserController {
+  constructor(User) {
+    this.User = User;
+  }
 
-  get(req, res) {
-    return res.send([{
-      nome: 'Default usuario',
-      email: 'leal@leal.com',
-      senha: '1234'
-    }])
+  async get(req, res) {
+    try {
+      const users = await this.User.find({});
+      res.send(users);
+    } catch (err) {
+      res.status(400).send(err.message);
+    }
   }
 }
 
-export default ProductsController;
+export default UserController;
