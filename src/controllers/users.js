@@ -1,4 +1,4 @@
-class UsersController {
+class ProductsController {
 
   get(req, res) {
     return res.send([{
@@ -9,4 +9,4 @@ class UsersController {
   }
 }
 
-export default UsersController;
+export default ProductsController;

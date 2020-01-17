@@ -1,8 +1,8 @@
 import express from 'express';
-import UsersController from '../controllers/users';
+import ProductsController from '../controllers/users';
 
 const router = express.Router();
-const usersController = new UsersController();
-router.get('/', (req, res) => usersController.get(req, res));
+const productsController = new ProductsController();
+router.get('/', (req, res) => productsController.get(req, res));
 
 export default router;

@@ -20,11 +20,12 @@
     "@babel/preset-env": "",
     "chai": "",
     "mocha": "",
-    "sinon": "^8.1.0",
+    "sinon": "",
     "supertest": ""
   },
   "dependencies": {
     "body-parser": "",
-    "express": ""
+    "express": "",
+    "mongoose": ""
   }
 }
