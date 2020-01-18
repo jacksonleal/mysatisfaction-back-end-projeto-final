@@ -1,0 +1,32 @@
+{
+  "name": "back-end-projeto-final-mysatisfaction-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "babel src --out-dir dist",
+    "start": "npm run build && node dist/server.js",
+    "start:dev": "babel-node src/server.js",
+    "test:integration": "NODE_ENV=test mocha --opts test/integration/mocha.opts test/integration/**/*_spec.js",
+    "test:unit": "NODE_ENV=test mocha --opts test/unit/mocha.opts test/unit/**/*_spec.js",
+    "test": "npm run test:unit && npm run test:integration"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.8.3",
+    "@babel/node": "^7.8.3",
+    "@babel/preset-env": "^7.8.3",
+    "chai": "^4.2.0",
+    "mocha": "^7.0.0",
+    "sinon": "^8.1.0",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "bcrypt": "^3.0.7",
+    "body-parser": "^1.19.0",
+    "config": "^3.2.5",
+    "express": "^4.17.1",
+    "mongoose": "^5.8.9"
+  }
+}
