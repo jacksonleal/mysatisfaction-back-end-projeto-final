@@ -1,4 +1,4 @@
-class UserController {
+class UsersController {
   constructor(User) {
     this.User = User;
   }
@@ -24,7 +24,33 @@ class UserController {
       res.status(400).send(err.message);
     }
   }
+  async create(req, res) {
+    const user = new this.User(req.body);
+    try {
+      await user.save();
+      res.status(201).send(user);
+    } catch (err) {
+      res.status(422).send(err.message);
+    }
+  }
 
+  async update(req, res) {
+    try {
+      await this.User.updateOne({ _id: req.params.id }, req.body);
+      res.sendStatus(200);
+    } catch (err) {
+      res.status(422).send(err.message);
+    }
+  }
+
+  async remove(req, res) {
+    try {
+      await this.User.deleteOne({ _id: req.params.id });
+      res.sendStatus(204);
+    } catch (err) {
+      res.status(400).send(err.message);
+    }
+  }
 }
 
-export default UserController;
+export default UsersController;
