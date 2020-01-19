@@ -18,17 +18,17 @@ class WelcomeController {
     } = req;
 
     try {
-      const welcome = await this.Welcome.find({ _id: id });
-      res.send(welcome);
+      const cwelcome = await this.Welcome.find({ _id: id });
+      res.send(cwelcome);
     } catch (err) {
       res.status(400).send(err.message);
     }
   }
   async create(req, res) {
-    const welcome = new this.Welcome(req.body);
+    const cwelcome = new this.Welcome(req.body);
     try {
-      await welcome.save();
-      res.status(201).send(welcome);
+      await cwelcome.save();
+      res.status(201).send(cwelcome);
     } catch (err) {
       res.status(422).send(err.message);
     }

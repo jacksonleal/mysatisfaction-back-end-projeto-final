@@ -1,13 +1,13 @@
 import express from 'express';
-import ProductsController from '../controllers/welcome';
-import Product from '../models/welcome';
+import WelcomeController from '../controllers/welcome';
+import Welcome from '../models/welcome';
 
 const router = express.Router();
-const productsController = new ProductsController(Product);
-router.get('/', (req, res) => productsController.get(req, res));
-router.get('/:id', (req, res) => productsController.getById(req, res));
-router.post('/', (req, res) => productsController.create(req, res));
-router.put('/:id', (req, res) => productsController.update(req, res));
-router.delete('/:id', (req, res) => productsController.remove(req, res));
+const welcomeController = new WelcomeController(Welcome);
+router.get('/', (req, res) => welcomeController.get(req, res));
+router.get('/:id', (req, res) => welcomeController.getById(req, res));
+router.post('/', (req, res) => welcomeController.create(req, res));
+router.put('/:id', (req, res) => welcomeController.update(req, res));
+router.delete('/:id', (req, res) => welcomeController.remove(req, res));
 
 export default router;

@@ -7,7 +7,7 @@ describe('Controller: Welcome', () => {
     {
       __v: 0,
       _id: '56cb91bdc3464f14678934ca',
-      name: 'Default usuario',
+      name: 'Default welcome'
     }
   ];
 
@@ -15,8 +15,8 @@ describe('Controller: Welcome', () => {
     params: {}
   };
 
-  describe('get() Users', () => {
-    it('should return a list of Users', async () => {
+  describe('get() welcome', () => {
+    it('should return a list of welcome', async () => {
       const response = {
         send: sinon.spy()
       };
@@ -51,7 +51,7 @@ describe('Controller: Welcome', () => {
   });
 
   describe('getById()', () => {
-    it('should return one Users', async () => {
+    it('should return one welcome', async () => {
       const fakeId = 'a-fake-id';
       const request = {
         params: {
@@ -72,8 +72,8 @@ describe('Controller: Welcome', () => {
     });
   });
 
-  describe('create() user', () => {
-    it('should save a new user successfully', async () => {
+  describe('create() welcome', () => {
+    it('should save a new welcome successfully', async () => {
       const requestWithBody = Object.assign(
         {},
         { body: defaultWelcome[0] },
@@ -124,12 +124,12 @@ describe('Controller: Welcome', () => {
     });
   });
 
-  describe('update() users', () => {
-    it('should respond with 200 when the user has been updated', async () => {
+  describe('update() welcome', () => {
+    it('should respond with 200 when the welcome has been updated', async () => {
       const fakeId = 'a-fake-id';
       const updatedWelcome = {
         _id: fakeId,
-        name: 'Updated user-name',
+        name: 'Updated welcome',
       };
       const request = {
         params: {
@@ -161,7 +161,7 @@ describe('Controller: Welcome', () => {
         const fakeId = 'a-fake-id';
         const updatedWelcome = {
           _id: fakeId,
-          name: 'Updated user-name',
+          name: 'Updated welcome',
         };
         const request = {
           params: {
@@ -192,8 +192,8 @@ describe('Controller: Welcome', () => {
     });
   });
 
-  describe('delete() user', () => {
-    it('should respond with 204 when the user has been deleted', async () => {
+  describe('delete() welcome', () => {
+    it('should respond with 204 when the welcome has been deleted', async () => {
       const fakeId = 'a-fake-id';
       const request = {
         params: {
