@@ -1,6 +1,6 @@
-import express from 'express';
-import WelcomeController from '../controllers/welcome';
-import Welcome from '../models/welcome';
+const express = require('express');
+const WelcomeController = require('../controllers/welcome');
+const Welcome = require('../models/welcome');
 
 const router = express.Router();
 const welcomeController = new WelcomeController(Welcome);

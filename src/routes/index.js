@@ -1,7 +1,7 @@
-import express from 'express';
-import welcomeRoute from './welcome';
-import usersRoute from './users';
-import cformsRoute from './cforms';
+const express = require('express');
+const welcomeRoute = require('./welcome');
+const usersRoute = require('./users');
+const cformsRoute = require('./cforms');
 
 const router = express.Router();
 

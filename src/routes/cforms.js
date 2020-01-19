@@ -1,6 +1,6 @@
-import express from 'express';
-import CformsController from '../controllers/cforms';
-import Cforms from '../models/cforms';
+const express = require('express');
+const CformsController = require('../controllers/cforms');
+const Cforms = require('../models/cforms');
 
 const router = express.Router();
 const cformsController = new CformsController(Cforms);

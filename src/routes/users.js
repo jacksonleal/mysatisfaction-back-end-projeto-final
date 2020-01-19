@@ -1,7 +1,7 @@
-import express from 'express';
-import UsersController from '../controllers/users';
-import User from '../models/user';
-import AuthService from '../services/auth';
+const express = require('express');
+const UsersController = require('../controllers/users');
+const User = require('../models/user');
+const AuthService = require('../services/auth');
 
 const router = express.Router();
 const usersController = new UsersController(User, AuthService);

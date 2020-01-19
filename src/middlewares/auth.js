@@ -1,5 +1,5 @@
-import jwt from 'jsonwebtoken';
-import config from 'config';
+const jwt = require('jsonwebtoken');
+const config = require('config');
 
 export default (req, res, next) => {
   const token = req.headers['x-access-token'];

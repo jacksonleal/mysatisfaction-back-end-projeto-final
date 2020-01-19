@@ -1,9 +1,9 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import routes from './routes';
-import database from './database';
-import acl from 'express-acl';
-import authMiddleware from './middlewares/auth';
+const express = require('express');
+const bodyParser = require('body-parser');
+const routes = require('./routes');
+const database = require('./database');
+const acl = require('express-acl');
+const authMiddleware = require('./middlewares/auth');
 
 const app = express();
 

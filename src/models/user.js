@@ -1,6 +1,6 @@
-import mongoose from 'mongoose';
-import Util from 'util';
-import bcrypt from 'bcrypt';
+const mongoose = require('mongoose');
+const Util = require('util');
+const bcrypt = require('bcrypt');
 
 const hashAsync = Util.promisify(bcrypt.hash);
 const schema = new mongoose.Schema({
@@ -10,7 +10,7 @@ const schema = new mongoose.Schema({
   role: String
 });
 
-schema.pre('save', async function(next) {
+schema.pre('save', async function (next) {
   if (!this.password || !this.isModified('password')) {
     return next();
   }
