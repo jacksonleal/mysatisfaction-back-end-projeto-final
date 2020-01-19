@@ -1,4 +1,4 @@
-import setupApp from "./app";
+const setupApp = require("./app");
 const port = 3000;
 
 (async () => {
@@ -16,7 +16,7 @@ const port = 3000;
             console.error(err);
             process.exit(1);
           }
-          app.database.connection.close(function() {
+          app.database.connection.close(function () {
             console.info("Database connection closed!");
             process.exit(0);
           });
