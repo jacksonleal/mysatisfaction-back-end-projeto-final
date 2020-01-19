@@ -17,7 +17,7 @@
     "style:fix": "npm run lint:fix & npm run prettier:fix",
     "dev": "nodemon start"
   },
-  "author": "",
+  "author": "jackson leal",
   "license": "ISC",
   "devDependencies": {
     "@babel/cli": "^7.8.3",
