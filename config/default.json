@@ -1,0 +1,10 @@
+{
+  "database": {
+    "mongoUrl": "mongodb://localhost:27017/mysatisfactionDB",
+    "mongoDBUrl": "mongodb+srv://jAX:jAX1910@cluster0-pxkjh.mongodb.net/test?retryWrites=true&w=majority"
+  },
+  "auth": {
+    "key": "thisisaverysecurekey",
+    "tokenExpiresIn": "7d"
+  }
+}
