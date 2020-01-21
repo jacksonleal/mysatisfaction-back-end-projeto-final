@@ -16,7 +16,7 @@ describe('AuthMiddleware', () => {
   it('should call the next middleware passing an error when the token validation fails', done => {
     const reqFake = {
       headers: {
-        'x-access-token': 'invalid token'
+        'x-access-token': 'token inválido'
       }
     };
     const resFake = {};
@@ -26,9 +26,9 @@ describe('AuthMiddleware', () => {
     });
   });
 
-  it('should call next middleware if theres no token', done => {
+  it('deve chamar o próximo middleware se não houver token', done => {
     const reqFake = {
-        headers: {}
+      headers: {}
     };
     const resFake = {};
     authMiddleware(reqFake, resFake, done);

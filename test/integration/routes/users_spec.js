@@ -27,11 +27,11 @@ describe('Routes: Users', () => {
   afterEach(async () => await User.deleteMany({}));
 
   describe('GET /users', () => {
-    it('should return a list of users', done => {
+    it('deve retornar uma lista de usúarios', done => {
 
       request
         .get('/users')
-        .set({'x-access-token': authToken})
+        .set({ 'x-access-token': authToken })
         .end((err, res) => {
           expect(res.body).to.eql([expectedAdminUser]);
           done(err);
@@ -39,11 +39,11 @@ describe('Routes: Users', () => {
     });
 
     context('when an id is specified', done => {
-      it('should return 200 with one user', done => {
+      it('deve retornar 200 com um usuário', done => {
 
         request
           .get(`/users/${defaultId}`)
-          .set({'x-access-token': authToken})
+          .set({ 'x-access-token': authToken })
           .end((err, res) => {
             expect(res.statusCode).to.eql(200);
             expect(res.body).to.eql([expectedAdminUser]);
@@ -55,7 +55,7 @@ describe('Routes: Users', () => {
 
   describe('POST /users', () => {
     context('when posting an user', () => {
-      it('should return a new user with status code 201', done => {
+      it('deve retornar um novo usuário com o código de status 201', done => {
         const customId = '56cb91bdc3464f14678934ba';
         const newUser = Object.assign({}, { _id: customId, __v: 0 }, defaultAdmin);
         const expectedSavedUser = {
@@ -67,7 +67,7 @@ describe('Routes: Users', () => {
 
         request
           .post('/users')
-          .set({'x-access-token': authToken})
+          .set({ 'x-access-token': authToken })
           .send(newUser)
           .end((err, res) => {
             expect(res.statusCode).to.eql(201);
@@ -80,7 +80,7 @@ describe('Routes: Users', () => {
 
   describe('PUT /users/:id', () => {
     context('when editing an user', () => {
-      it('should update the user and return 200 as status code', done => {
+      it('deve atualizar o usuário e retornar 200 como código de status', done => {
         const customUser = {
           name: 'Din Doe'
         };
@@ -88,7 +88,7 @@ describe('Routes: Users', () => {
 
         request
           .put(`/users/${defaultId}`)
-          .set({'x-access-token': authToken})
+          .set({ 'x-access-token': authToken })
           .send(updatedUser)
           .end((err, res) => {
             expect(res.status).to.eql(200);
@@ -100,11 +100,11 @@ describe('Routes: Users', () => {
 
   describe('DELETE /users/:id', () => {
     context('when deleting an user', () => {
-      it('should delete an user and return 204 as status code', done => {
+      it('deve excluir um usuário e retornar 204 como código de status', done => {
 
         request
           .delete(`/users/${defaultId}`)
-          .set({'x-access-token': authToken})
+          .set({ 'x-access-token': authToken })
           .end((err, res) => {
             expect(res.status).to.eql(204);
             done(err);
@@ -114,7 +114,7 @@ describe('Routes: Users', () => {
   });
 
   context('when authenticating an user', () => {
-    it('should generate a valid token', done => {
+    it('deve gerar um token válido', done => {
 
       request
         .post(`/users/authenticate`)
@@ -129,7 +129,7 @@ describe('Routes: Users', () => {
         });
     });
 
-    it('should return unauthorized when the password does not match', done => {
+    it('deve retornar não autorizado quando a senha não corresponder', done => {
 
       request
         .post(`/users/authenticate`)

@@ -9,7 +9,7 @@ const port = 3000;
 (async () => {
   try {
     const app = await (0, _app.default)();
-    const server = app.listen(process.env.PORT || port, () => console.info(`app running on port ${port}`));
+    const server = app.listen(process.env.PORT || port, () => console.info(`aplicativo em execução na porta: ${port}`));
     const exitSignals = ["SIGINT", "SIGTERM", "SIGQUIT"];
     exitSignals.map(sig => process.on(sig, () => server.close(err => {
       if (err) {
@@ -18,7 +18,7 @@ const port = 3000;
       }
 
       app.database.connection.close(function () {
-        console.info("Database connection closed!");
+        console.info("Conexão com o banco de dados fechada!");
         process.exit(0);
       });
     })));

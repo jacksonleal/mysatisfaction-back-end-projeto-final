@@ -16,7 +16,7 @@ describe('Controller: Welcome', () => {
   };
 
   describe('get() welcome', () => {
-    it('should return a list of welcome', async () => {
+    it('deve retornar uma lista de boas-vindas', async () => {
       const response = {
         send: sinon.spy()
       };
@@ -31,7 +31,7 @@ describe('Controller: Welcome', () => {
       sinon.assert.calledWith(response.send, defaultWelcome);
     });
 
-    it('should return 400 when an error occurs', async () => {
+    it('deve retornar 400 quando ocorrer um erro', async () => {
       const request = {};
       const response = {
         send: sinon.spy(),
@@ -51,7 +51,7 @@ describe('Controller: Welcome', () => {
   });
 
   describe('getById()', () => {
-    it('should return one welcome', async () => {
+    it('deve retornar uma bem-vinda', async () => {
       const fakeId = 'a-fake-id';
       const request = {
         params: {
@@ -73,7 +73,7 @@ describe('Controller: Welcome', () => {
   });
 
   describe('create() welcome', () => {
-    it('should save a new welcome successfully', async () => {
+    it('deve salvar uma nova bem-vinda com sucesso', async () => {
       const requestWithBody = Object.assign(
         {},
         { body: defaultWelcome[0] },
@@ -100,7 +100,7 @@ describe('Controller: Welcome', () => {
     });
 
     context('when an error occurs', () => {
-      it('should return 422', async () => {
+      it('deve retornar 422', async () => {
         const response = {
           send: sinon.spy(),
           status: sinon.stub()
@@ -125,7 +125,7 @@ describe('Controller: Welcome', () => {
   });
 
   describe('update() welcome', () => {
-    it('should respond with 200 when the welcome has been updated', async () => {
+    it('deve responder com 200 quando o bem-vindo foi atualizado', async () => {
       const fakeId = 'a-fake-id';
       const updatedWelcome = {
         _id: fakeId,
@@ -157,7 +157,7 @@ describe('Controller: Welcome', () => {
     });
 
     context('when an error occurs', () => {
-      it('should return 422', async () => {
+      it('deve retornar 422', async () => {
         const fakeId = 'a-fake-id';
         const updatedWelcome = {
           _id: fakeId,
@@ -193,7 +193,7 @@ describe('Controller: Welcome', () => {
   });
 
   describe('delete() welcome', () => {
-    it('should respond with 204 when the welcome has been deleted', async () => {
+    it('deve responder com 204 quando o bem-vindo foi excluído', async () => {
       const fakeId = 'a-fake-id';
       const request = {
         params: {
@@ -219,7 +219,7 @@ describe('Controller: Welcome', () => {
     });
 
     context('when an error occurs', () => {
-      it('should return 400', async () => {
+      it('deve retornar 400', async () => {
         const fakeId = 'a-fake-id';
         const request = {
           params: {

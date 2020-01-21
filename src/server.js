@@ -5,7 +5,7 @@ const port = 3000;
   try {
     const app = await setupApp();
     const server = app.listen(process.env.PORT || port, () =>
-      console.info(`app running on port ${port}`)
+      console.info(`aplicativo em execução na porta: ${port}`)
     );
 
     const exitSignals = ["SIGINT", "SIGTERM", "SIGQUIT"];
@@ -17,7 +17,7 @@ const port = 3000;
             process.exit(1);
           }
           app.database.connection.close(function () {
-            console.info("Database connection closed!");
+            console.info("Conexão com o banco de dados fechada!");
             process.exit(0);
           });
         })

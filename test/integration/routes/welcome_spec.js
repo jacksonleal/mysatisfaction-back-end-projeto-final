@@ -30,7 +30,7 @@ describe('Routes: welcome', () => {
   afterEach(async () => await Welcome.deleteMany());
 
   describe('GET /welcome', () => {
-    it('should return a list of welcome', done => {
+    it('deve retornar uma lista de boas-vindas', done => {
 
       request
         .get('/welcome')
@@ -42,7 +42,7 @@ describe('Routes: welcome', () => {
     });
 
     context('when an id is specified', done => {
-      it('should return 200 with one welcome', done => {
+      it('deve retornar 200 com uma bem-vinda', done => {
 
         request
           .get(`/welcome/${defaultId}`)
@@ -59,7 +59,7 @@ describe('Routes: welcome', () => {
   describe('POST /welcome', () => {
     context('when posting a welcome', () => {
 
-      it('should return a new welcome with status code 201', done => {
+      it('deve retornar uma nova bem-vinda com o código de status 201', done => {
         const customId = '56cb91bdc3464f14678934ba';
         const newWelcome = Object.assign({}, { _id: customId, __v: 0 }, defaultWelcome);
         const expectedSavedWelcome = {
@@ -83,7 +83,7 @@ describe('Routes: welcome', () => {
 
   describe('PUT /welcome/:id', () => {
     context('when editing a welcome', () => {
-      it('should update the welcome and return 200 as status code', done => {
+      it('deve atualizar o bem-vindo e retornar 200 como código de status', done => {
         const customWelcome = {
           name: 'Custom name'
         };
@@ -103,7 +103,7 @@ describe('Routes: welcome', () => {
 
   describe('DELETE /welcome/:id', () => {
     context('when deleting a welcome', () => {
-      it('should delete a welcome and return 204 as status code', done => {
+      it('deve excluir um bem-vindo e retornar 204 como código de status', done => {
 
         request
           .delete(`/welcome/${defaultId}`)
