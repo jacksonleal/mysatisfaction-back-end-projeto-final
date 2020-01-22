@@ -49,7 +49,7 @@ class WelcomeController {
 
   async createByName(req, res) {
     try {
-      await this.Welcome.insertOne({
+      await this.Welcome.createOne({
         name: req.params.name
       });
       res.sendStatus(204);
