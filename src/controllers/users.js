@@ -30,9 +30,10 @@ class UsersController {
     }
   }
 
-  async getByEmailPass(req, res) {
+  async getByUserPass(req, res) {
     const {
-      params: { email, password } } = req;
+      params: { email, password }
+    } = req;
 
     try {
       const user = await this.User.find({

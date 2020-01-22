@@ -45,7 +45,7 @@ class UsersController {
     }
   }
 
-  async getByEmailPass(req, res) {
+  async getByUserPass(req, res) {
     const {
       params: {
         email,

@@ -16,6 +16,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 const router = _express.default.Router();
 
 const loginController = new _users.default(_login.default);
-router.get('/:email/:password', (req, res) => loginController.getByEmailPass(req, res));
+router.get('/:email/:password', (req, res) => loginController.getByUserPass(req, res));
 var _default = router;
 exports.default = _default;
