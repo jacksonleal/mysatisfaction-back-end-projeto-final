@@ -36,6 +36,24 @@ class WelcomeController {
     }
   }
 
+  async setByName(req, res) {
+    const {
+      params: {
+        name
+      }
+    } = req; //
+
+    try {
+      await cwelcome.save({
+        name: name
+      });
+      res.status(201).send(cwelcome);
+    } catch (err) {
+      res.status(422).send(err.message);
+    } //
+
+  }
+
   async create(req, res) {
     const cwelcome = new this.Welcome(req.body);
 

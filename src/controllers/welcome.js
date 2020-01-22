@@ -13,9 +13,7 @@ class WelcomeController {
   }
 
   async getById(req, res) {
-    const {
-      params: { id }
-    } = req;
+    const { params: { id } } = req;
 
     try {
       const cwelcome = await this.Welcome.find({ _id: id });
@@ -24,6 +22,19 @@ class WelcomeController {
       res.status(400).send(err.message);
     }
   }
+
+  async setByName(req, res) {
+    const { params: { name } } = req;
+    //
+    try {
+      await cwelcome.save({ name: name });
+      res.status(201).send(cwelcome);
+    } catch (err) {
+      res.status(422).send(err.message);
+    }
+    //
+  }
+
   async create(req, res) {
     const cwelcome = new this.Welcome(req.body);
     try {
