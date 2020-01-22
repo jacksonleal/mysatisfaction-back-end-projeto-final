@@ -1,5 +1,6 @@
 app:
 https://mysatisfaction-project-back-en.herokuapp.com/
+https://mysatisfaction-project-back-en.herokuapp.com/
 
 link da pasta do git do back end
 https://github.com/jacksonleal/mysatisfaction-back-end-projeto-final
