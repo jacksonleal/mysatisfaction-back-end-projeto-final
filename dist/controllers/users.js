@@ -56,6 +56,31 @@ class UsersController {
     }
   }
 
+  async createUser(req, res) {
+    const {
+      params: {
+        name,
+        email,
+        password,
+        role
+      }
+    } = req; //
+
+    try {
+      const cwelcome = new this.Welcome({
+        name: name,
+        email: email,
+        password: password,
+        role: role
+      });
+      await cwelcome.save();
+      res.status(201).send(cwelcome);
+    } catch (err) {
+      res.status(422).send(err.message);
+    } //
+
+  }
+
   async update(req, res) {
     const body = req.body;
 
