@@ -17,8 +17,6 @@ const configureExpress = () => {
   //app.use(authMiddleware);
   //app.use(acl.authorize.unless({ path: ['/users/authenticate'] }));
 
-  app.use(bodyParser.text({ type: "text/plain" }));
-
   app.use('/', routes);
   app.database = database;
 
