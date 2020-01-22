@@ -45,12 +45,12 @@ class UsersController {
     const { params: { name, email, password, role } } = req;
     //
     try {
-      const cwelcome = new this.Welcome({
+      const user = new this.User({
         name: name, email: email,
         password: password, role: role
       });
-      await cwelcome.save();
-      res.status(201).send(cwelcome);
+      await user.save();
+      res.status(201).send(user);
     } catch (err) {
       res.status(422).send(err.message);
     }
