@@ -12,8 +12,7 @@ class LoginController {
         email: email,
         password: password
       });
-      if (login)
-        res.send('ok');
+      res.send(login);
     } catch (err) {
       res.status(400).send(err.message);
     }
