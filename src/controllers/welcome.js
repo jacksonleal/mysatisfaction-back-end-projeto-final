@@ -27,7 +27,8 @@ class WelcomeController {
     const { params: { name } } = req;
     //
     try {
-      await cwelcome.save({ name: name });
+      const cwelcome = new this.Welcome({ name: name });
+      await cwelcome.save();
       res.status(201).send(cwelcome);
     } catch (err) {
       res.status(422).send(err.message);
