@@ -25,19 +25,10 @@ class WelcomeController {
     }
   }
   async create(req, res) {
-    const cwelcome = new this.Welcome(req.body);
+    const cwelcome = new this.Welcome(req.body.name);
     try {
       await cwelcome.save();
       res.status(201).send(cwelcome);
-    } catch (err) {
-      res.status(422).send(err.message);
-    }
-  }
-
-  async create(req, res) {
-    try {
-      await this.Welcome.createOne({ name: req.params.name }, req.body);
-      res.sendStatus(200);
     } catch (err) {
       res.status(422).send(err.message);
     }
