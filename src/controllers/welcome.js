@@ -25,7 +25,7 @@ class WelcomeController {
     }
   }
   async create(req, res) {
-    const cwelcome = new this.Welcome(req.body);
+    const cwelcome = new this.Welcome(req.body.name);
     try {
       await cwelcome.save();
       res.status(201).send(cwelcome);
