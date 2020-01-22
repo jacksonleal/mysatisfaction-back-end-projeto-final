@@ -47,17 +47,6 @@ class WelcomeController {
     }
   }
 
-  async createByName(req, res) {
-    try {
-      await this.Welcome.createOne({
-        name: req.params.name
-      });
-      res.sendStatus(204);
-    } catch (err) {
-      res.status(400).send(err.message);
-    }
-  }
-
   async update(req, res) {
     try {
       await this.Welcome.updateOne({
