@@ -1,3 +1,4 @@
+import cors from 'cors';
 import express from 'express';
 import bodyParser from 'body-parser';
 import routes from './routes';
@@ -16,7 +17,8 @@ const configureExpress = () => {
   app.use(bodyParser.json());
   //app.use(authMiddleware);
   //app.use(acl.authorize.unless({ path: ['/users/authenticate'] }));
-
+  app.use(cors());
+  app.options('*', cors());
   app.use('/', routes);
   app.database = database;
 
