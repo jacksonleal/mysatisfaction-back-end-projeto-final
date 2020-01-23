@@ -42,17 +42,19 @@ class CformsController {
         title,
         description
       }
-    } = req;
+    } = req; //
 
     try {
-      const cforms = await this.Cforms.find({
+      const cforms = new this.Cforms({
         title: title,
         description: description
       });
-      res.send(cforms);
+      await cforms.save();
+      res.status(201).send(login);
     } catch (err) {
-      res.status(400).send(err.message);
-    }
+      res.status(422).send(err.message);
+    } //
+
   }
 
   async update(req, res) {
