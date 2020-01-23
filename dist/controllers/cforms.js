@@ -50,7 +50,7 @@ class CformsController {
         description: description
       });
       await cforms.save();
-      res.status(201).send(login);
+      res.status(201).send(cforms);
     } catch (err) {
       res.status(422).send(err.message);
     } //
