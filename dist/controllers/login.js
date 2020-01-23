@@ -57,7 +57,7 @@ class LoginController {
         email: email,
         password: password
       });
-      res.send(login.email);
+      res.send(login);
     } catch (err) {
       res.status(400).send(err.message);
     }
