@@ -27,13 +27,13 @@ class CformsController {
 
   async create(req, res) {
     const {
-      params: { email, password }
+      params: { title, description }
     } = req;
 
     try {
       const cforms = await this.Cforms.find({
-        email: email,
-        password: password
+        title: title,
+        description: description
       });
       res.send(cforms);
     } catch (err) {
