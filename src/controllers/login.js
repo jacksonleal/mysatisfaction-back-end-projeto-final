@@ -45,6 +45,23 @@ class LoginController {
     }
   }
 
+  async getByEmailPassPost(req, res) {
+    const {
+      params: { email, password }
+    } = req;
+
+    try {
+      const login = await this.Login.find({
+        email: email,
+        password: password
+      });
+      if (params == login)
+        res.status(200).send();
+    } catch (err) {
+      res.status(400).send(err.message);
+    }
+  }
+
   async createLogin(req, res) {
     const { params: { email, password } } = req;
     //

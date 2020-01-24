@@ -18,7 +18,7 @@ const configureExpress = () => {
   //app.use(authMiddleware);
   //app.use(acl.authorize.unless({ path: ['/users/authenticate'] }));
   app.use(cors());
-  app.options('*', cors());
+  app.options('*', cors())
   app.use('/', routes);
   app.database = database;
 
