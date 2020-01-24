@@ -45,6 +45,23 @@ class UsersController {
     }
   }
 
+  async getByEmail(req, res) {
+    const {
+      params: {
+        email
+      }
+    } = req;
+
+    try {
+      const user = await this.User.find({
+        email: email
+      });
+      res.send(user);
+    } catch (err) {
+      res.status(400).send(err.message);
+    }
+  }
+
   async create(req, res) {
     const user = new this.User(req.body);
 
