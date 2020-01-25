@@ -19,12 +19,13 @@ const router = _express.default.Router();
 
 const usersController = new _users.default(_user.default, _auth.default);
 router.get('/', (req, res) => usersController.get(req, res));
-router.get('/:id', (req, res) => usersController.getById(req, res));
-router.get('/email/:email', (req, res) => usersController.getByEmail(req, res));
-router.get('/email/:email/:password', (req, res) => usersController.getByEmailPass(req, res));
-router.post('/:name/:email/:password/:role', (req, res) => usersController.createUser(req, res));
+router.get('/:id', (req, res) => usersController.getById(req, res)); //router.get('/email/:email', (req, res) => usersController.getByEmail(req, res));
+//router.get('/email/:email/:password', (req, res) => usersController.getByEmailPass(req, res));
+//router.post('/:name/:email/:password/:role', (req, res) => usersController.createUser(req, res));
+
 router.put('/:id', (req, res) => usersController.update(req, res));
 router.delete('/:id', (req, res) => usersController.remove(req, res));
 router.post('/authenticate', (req, res) => usersController.authenticate(req, res));
+router.post('/', (req, res) => usersController.create(req, res));
 var _default = router;
 exports.default = _default;
