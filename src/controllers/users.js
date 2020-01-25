@@ -49,10 +49,7 @@ class UsersController {
     } = req;
 
     try {
-      const user = await this.User.find({
-        email: email,
-        password: password
-      });
+      const user = await this.User.find({ email: email, password: password });
       res.send(user);
     } catch (err) {
       res.status(400).send(err.message);
