@@ -13,10 +13,9 @@ var _users = _interopRequireDefault(require("./users"));
 
 var _cforms = _interopRequireDefault(require("./cforms"));
 
-var _login = _interopRequireDefault(require("./login"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//import loginRoute from './login'
 const router = _express.default.Router(); //commit 
 //router.use('/login', loginRoute);
 
@@ -24,6 +23,6 @@ const router = _express.default.Router(); //commit
 router.use('/cforms', _cforms.default);
 router.use('/welcome', _welcome.default);
 router.use('/users', _users.default);
-router.get('/', (req, res) => res.send('by: jackson leal'));
+router.get('/', (req, res) => res.send('Equipe: Mysatisfaction: Joé Jackson; Ronan; Vanderlan'));
 var _default = router;
 exports.default = _default;
