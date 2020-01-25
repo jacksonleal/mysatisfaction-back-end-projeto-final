@@ -6,7 +6,7 @@ import loginRoute from './login'
 
 const router = express.Router();
 
-router.use('/login', loginRoute);
+//router.use('/login', loginRoute);
 router.use('/cforms', cformsRoute);
 router.use('/welcome', welcomeRoute);
 router.use('/users', usersRoute);
