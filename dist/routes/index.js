@@ -17,7 +17,8 @@ var _login = _interopRequireDefault(require("./login"));
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-const router = _express.default.Router(); //router.use('/login', loginRoute);
+const router = _express.default.Router(); //commit 
+//router.use('/login', loginRoute);
 
 
 router.use('/cforms', _cforms.default);
