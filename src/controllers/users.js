@@ -1,6 +1,9 @@
 import jwt from 'jsonwebtoken';
 import config from 'config';
-import bcrypt from 'bcrypt';
+//import Util from 'util';
+//import bcrypt from 'bcrypt';
+
+//const hashAsync = Util.promisify(bcrypt.hash);
 
 class UsersController {
   constructor(User, AuthService) {
@@ -49,6 +52,7 @@ class UsersController {
     } = req;
 
     try {
+      //const hashedPassword = await hashAsync(password, 10);
       const user = await this.User.find({
         email: email,
         password: password

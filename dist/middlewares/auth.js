@@ -5,12 +5,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
-var _jsonwebtoken = _interopRequireDefault(require("jsonwebtoken"));
-
-var _config = _interopRequireDefault(require("config"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
+//import jwt from 'jsonwebtoken';
+//import config from 'config';
 var _default = (req, res, next) => {
   const token = req.headers['x-access-token'];
 
@@ -19,8 +15,7 @@ var _default = (req, res, next) => {
   }
 
   ;
-
-  _jsonwebtoken.default.verify(token, _config.default.get('auth.key'), (err, decoded) => {
+  jwt.verify(token, config.get('auth.key'), (err, decoded) => {
     req.decoded = decoded;
     next(err);
   });

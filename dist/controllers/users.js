@@ -9,10 +9,11 @@ var _jsonwebtoken = _interopRequireDefault(require("jsonwebtoken"));
 
 var _config = _interopRequireDefault(require("config"));
 
-var _bcrypt = _interopRequireDefault(require("bcrypt"));
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+//import Util from 'util';
+//import bcrypt from 'bcrypt';
+//const hashAsync = Util.promisify(bcrypt.hash);
 class UsersController {
   constructor(User, AuthService) {
     this.User = User;
@@ -71,6 +72,7 @@ class UsersController {
     } = req;
 
     try {
+      //const hashedPassword = await hashAsync(password, 10);
       const user = await this.User.find({
         email: email,
         password: password

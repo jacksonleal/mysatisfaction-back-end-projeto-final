@@ -27,8 +27,8 @@ schema.pre('save', async function (next) {
   }
 
   try {
-    const hashedPassword = await hashAsync(this.password, 10);
-    this.password = hashedPassword;
+    //const hashedPassword = await hashAsync(this.password, 10);
+    this.password = this.password;
   } catch (error) {
     next(err);
   }
@@ -36,9 +36,10 @@ schema.pre('save', async function (next) {
 schema.set('toJSON', {
   transform: (doc, ret, options) => ({
     _id: ret._id,
-    email: ret.email,
     name: ret.name,
-    role: ret.role
+    email: ret.email,
+    role: ret.role,
+    password: ret.password
   })
 });
 

@@ -1,6 +1,6 @@
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
-import config from 'config';
+//import bcrypt from 'bcrypt';
+//import jwt from 'jsonwebtoken';
+//import config from 'config';
 
 class Auth {
   constructor(User) {
@@ -8,9 +8,9 @@ class Auth {
   }
 
   async authenticate(data) {
-    const user = await this.User.findOne({email: data.email});
+    const user = await this.User.findOne({ email: data.email });
 
-    if(!user || !(await bcrypt.compare(data.password, user.password))) {
+    if (!user || !(await bcrypt.compare(data.password, user.password))) {
       return false;
     }
 

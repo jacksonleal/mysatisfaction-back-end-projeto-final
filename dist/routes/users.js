@@ -20,6 +20,7 @@ const router = _express.default.Router();
 const usersController = new _users.default(_user.default, _auth.default);
 router.get('/', (req, res) => usersController.get(req, res));
 router.get('/:id', (req, res) => usersController.getById(req, res));
+router.get('/login/:email/:password', (req, res) => usersController.getByEmailPass(req, res));
 router.get('/email/:email', (req, res) => usersController.getByEmail(req, res)); //router.get('/email/:email/:password', (req, res) => usersController.getByEmailPass(req, res));
 //router.post('/:name/:email/:password/:role', (req, res) => usersController.createUser(req, res));
 
