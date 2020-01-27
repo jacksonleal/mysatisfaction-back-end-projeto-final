@@ -25,6 +25,20 @@ class CformsController {
     }
   }
 
+  async getByTitle(req, res) {
+    const {
+      params: { title }
+    } = req;
+
+    try {
+      const cforms = await this.Cforms.find({ title: title });
+      const description = cforms[0].description;
+      res.send(description);
+    } catch (err) {
+      res.status(400).send(err.message);
+    }
+  }
+
   async create(req, res) {
     const { params: { title, description } } = req;
     //
