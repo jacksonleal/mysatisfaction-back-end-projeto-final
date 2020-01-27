@@ -47,6 +47,20 @@ class UsersController {
     }
   }
 
+  async getByEmailLogin(req, res) {
+    const {
+      params: { email }
+    } = req;
+
+    try {
+      const user = await this.User.find({ email: email });
+      //const name = user[0].name;
+      res.send(user);
+    } catch (err) {
+      res.status(400).send(err.message);
+    }
+  }
+
   async getByEmailPass(req, res) {
     const {
       params: { email, password }
