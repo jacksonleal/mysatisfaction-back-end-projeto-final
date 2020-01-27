@@ -27,8 +27,7 @@ schema.set('toJSON', {
     _id: ret._id,
     name: ret.name,
     email: ret.email,
-    role: ret.role,
-    password: ret.password
+    role: ret.role
   })
 });
 

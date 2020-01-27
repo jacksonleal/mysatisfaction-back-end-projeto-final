@@ -40,7 +40,8 @@ class UsersController {
 
     try {
       const user = await this.User.find({ email: email });
-      res.send(user);
+      const name = user[0].name;
+      res.send(name);
     } catch (err) {
       res.status(400).send(err.message);
     }
