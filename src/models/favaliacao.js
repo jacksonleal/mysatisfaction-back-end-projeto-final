@@ -15,6 +15,8 @@ const schema = new mongoose.Schema({
   }
 });
 
+//fiz td sozinho by jack
+
 const Favaliacao = mongoose.model('favaliacao', schema);
 
 export default Favaliacao;
