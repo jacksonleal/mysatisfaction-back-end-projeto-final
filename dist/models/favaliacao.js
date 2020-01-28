@@ -22,7 +22,7 @@ const schema = new _mongoose.default.Schema({
     type: Date,
     default: Date.now
   }
-});
+}); //fiz td sozinho by jack
 
 const Favaliacao = _mongoose.default.model('favaliacao', schema);
 
